@@ -8,6 +8,8 @@ var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var ejs = require("gulp-ejs");
 var plumber = require("gulp-plumber");
+var stylus = require('gulp-stylus');
+var pug = require('gulp-pug');
 
 // Sass
 
@@ -21,6 +23,15 @@ gulp.task('sass', function () {
         }))
         .pipe(gulp.dest('build/css'))
         .pipe(reload({stream:true}));
+});
+
+// stylus
+
+gulp.task('stylus', function() {
+    gulp.src(['stylus/**/*.styl', '!' + 'stylus/**/_*.styl'])
+        .pipe(plumber())
+        .pipe(stylus())
+        .pipe(gulp.dest('build/css'));
 });
 
 // Js-concat-uglify
@@ -52,6 +63,15 @@ gulp.task("ejs", function() {
         .pipe(gulp.dest('build'))
 });
 
+// pug
+
+gulp.task('pug', function() {
+    gulp.src(['templates/*.pug', '!' + 'templates/_*.pug'])
+        .pipe(plumber())
+        .pipe(pug())
+        .pipe(gulp.dest('build'));
+});
+
 // Static server
 
 gulp.task('browser-sync', function() {
@@ -73,8 +93,10 @@ gulp.task('bs-reload', function () {
 
 gulp.task('default',['browser-sync'], function() {
     gulp.watch('sass/**/*.scss',['sass']);
+    gulp.watch('stylus/**/*.styl', ['stylus']);
     gulp.watch('js/*.js',['js']);
     gulp.watch('images/**',['imagemin']);
     gulp.watch("build/*.html", ['bs-reload']);
     gulp.watch(['templates/*.ejs', 'site.json'], ['ejs']);
+    gulp.watch('templates/*.pug', ['pug']);
 });
