@@ -1,12 +1,15 @@
 {
-  "name": "rin",
-  "version": "4.0.0",
-  "description": "A Lean HTML & SASS Boilerplate",
-  "author": "sanographix",
-  "license": "MIT",
+  "name": "c90",
+  "version": "0.0.0",
+  "author": "spring-raining",
+  "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanographix/rin"
+    "url": "https://github.com/pentapod/c90.git"
+  },
+  "private": true,
+  "scripts": {
+    "publish": "gh-pages -d build"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",

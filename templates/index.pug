@@ -1,12 +1,16 @@
 -
-  pageTitle = "Toppage"
+  pageTitle = "C90"
   pageId = "index"
-  pageUrl = ""
-  pageDescription = "Awesome site"
+  pageUrl = "c90/"
+  pageDescription = ""
 
 doctype html
 html(prefix='og: http://ogp.me/ns#')
   include _header.pug
+
+  .message
+    object(type='image/svg+xml', data='images/logo.svg', width=150)
+    div かみんぐすーん
 
   body(class='page-'+pageId)
     include _footer.pug
