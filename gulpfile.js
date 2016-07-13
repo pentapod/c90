@@ -110,5 +110,5 @@ gulp.task('default',['browser-sync'], function() {
     gulp.watch('images/**',['imagemin']);
     gulp.watch("build/*.html", ['bs-reload']);
     gulp.watch(['templates/*.ejs', 'site.json'], ['ejs']);
-    gulp.watch('templates/*.pug', ['pug']);
+    gulp.watch(['templates/*.pug', 'site.json'], ['pug']);
 });
