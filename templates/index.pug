@@ -1,0 +1,12 @@
+-
+  pageTitle = "Toppage"
+  pageId = "index"
+  pageUrl = ""
+  pageDescription = "Awesome site"
+
+doctype html
+html(prefix='og: http://ogp.me/ns#')
+  include _header.pug
+
+  body(class='page-'+pageId)
+    include _footer.pug

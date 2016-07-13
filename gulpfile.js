@@ -10,6 +10,7 @@ var ejs = require("gulp-ejs");
 var plumber = require("gulp-plumber");
 var stylus = require('gulp-stylus');
 var pug = require('gulp-pug');
+var data = require('gulp-data');
 
 // Sass
 
@@ -31,7 +32,13 @@ gulp.task('stylus', function() {
     gulp.src(['stylus/**/*.styl', '!' + 'stylus/**/_*.styl'])
         .pipe(plumber())
         .pipe(stylus())
-        .pipe(gulp.dest('build/css'));
+        .pipe(pleeease({
+            autoprefixer: {
+                browsers: ['last 2 versions']
+            }
+        }))
+        .pipe(gulp.dest('build/css'))
+        .pipe(reload({stream:true}));
 });
 
 // Js-concat-uglify
@@ -68,7 +75,12 @@ gulp.task("ejs", function() {
 gulp.task('pug', function() {
     gulp.src(['templates/*.pug', '!' + 'templates/_*.pug'])
         .pipe(plumber())
-        .pipe(pug())
+        .pipe(data(function(file) {
+            return require("./site.json");
+        }))
+        .pipe(pug({
+            pretty: true
+        }))
         .pipe(gulp.dest('build'));
 });
 
