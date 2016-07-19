@@ -1,5 +1,133 @@
 // Core (Main Style)
-.message
-    margin: 50px 0
-    text-align: center
+body
+  letter-spacing: -0.01em
+  word-spacing: 0.2em
+  line-height: 1.8
 
+p
+  margin: 1em 0
+
+.invisible
+  font-size: 0
+  line-height: 0
+
+header, section
+  position: relative
+  padding: 60px 0
+
+header
+  background: linear-gradient(135deg, #05A5D1 0, #279E93 100%)
+  height: 35vw
+
+  .stripe
+    position: absolute
+    top: 1vw
+    width: 100%
+    height: 6vw
+    background: #ffffff
+
+  .title
+    position: absolute
+    bottom: calc(-0.3vw - 8px)
+    left: 10vw
+    width: 60vw
+
+  .badge
+    position: absolute
+    bottom: 50px
+    right: 10vw
+    width: 120px
+    height: 120px
+    text-align: center
+    border-radius: 50%
+    background-color: skyblue
+
+section.lead
+  h2
+    font-size: 200%
+    line-height: 1.8
+    letter-spacing: 0.1em
+    .alphabet
+      letter-spacing: 0
+
+section.detail
+  background-color: azure
+
+  h3
+    font-size: 105%
+    letter-spacing: 0.4em
+
+  .recommend li
+    font-size: 120%
+    letter-spacing: -0.04em
+    line-height: 1.9
+
+  .toc li
+    font-size: 90%
+
+section.spec
+  background-color: pink
+
+  th
+    text-align: left
+    padding-right: 24px
+  td
+    padding: 12px
+  strong
+    font-size: 160%
+    font-weight: 700
+    line-height: 1.3
+
+section.info
+  h3
+    font-size: 105%
+    letter-spacing: 0.4em
+
+  .share
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+      right: 0
+      bottom: 0
+      width: 2px
+      height: 80px
+      background-color: #aaaaaa
+
+  .about
+    display: flex
+    &:before
+      content: ""
+
+  .btn-area
+    margin-bottom: 6px
+
+  share-btn($color)
+    background-color: $color
+    color: #fff
+    border-color: $color
+    &:hover
+      background-color: darken($color, 15%)
+      color: #fff
+      border-color: darken($color, 15%)
+
+  .catalog
+    share-btn(#3f9d25)
+  .twitter
+    share-btn(#55acee)
+  .facebook
+    share-btn(#365899)
+  .hatebu
+    share-btn(#008fde)
+
+footer
+  .acknowledgement
+    text-align: center
+    line-height: 50px
+
+    a.react-logo
+      position: absolute
+      width: 50px
+      height: 50px
+      background-image: url(../images/react_logo.svg)
+      background-size: 100%

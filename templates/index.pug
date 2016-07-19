@@ -8,9 +8,99 @@ doctype html
 html(prefix='og: http://ogp.me/ns#')
   include _header.pug
 
-  .message
-    object(type='image/svg+xml', data='images/logo.svg', width=150)
-    div かみんぐすーん
-
   body(class='page-'+pageId)
+
+    header
+      .stripe
+      .title
+        object(type='image/svg+xml', data='images/title.svg')
+      .badge C90<br/>新刊
+
+    section.lead
+      .l-container
+        h2
+          span.alphabet React Native
+          | で<br/>
+          | アプリ、作ってみませんか？
+        p
+          a(href='https://facebook.github.io/react-native/') React Native
+          | とは、Facebookが開発を行っているスマートフォンアプリ開発用のUIフレームワークです。
+          | React Nativeを使えば、フロントエンド界の有名ライブラリReact.jsを使って書くのと変わらない感覚で、アプリ開発を行うことができます。
+          | しかも、内部ではOS標準のUIの管理を行っているので、ネイティブのアプリと全く見分けがつきません。
+          | 本書には、そんなReact Nativeに入門するまでの内容が揃っています。
+          | 「はじめる React Native」を読んで、あなたもアプリ開発をはじめませんか？
+
+
+    section.detail
+      .l-container
+        .l-row
+          .l-span6.recommend
+            h3 こんな人にオススメです
+            ul
+              li JavaScriptはそれなりに使えるけど､アプリ開発はさっぱり
+              li React.jsに興味がある
+              li JavaとSwiftどっちも覚えるなんて面倒だ
+          .l-span6.toc
+            h3 目次
+            ol
+              li まえがき
+              li インストール
+              li Reactブートキャンプ
+              li React Nativeでのスタイル・レイアウト
+              li React Nativeでのルーティング
+              li 外部ライブラリを使ってみよう
+              li リリース版のビルド
+              li React Native API
+
+    section.spec
+      .l-container
+        .l-row
+          .l-span2
+          .l-span7
+            table
+              tr
+                th タイトル
+                td はじめる React Native
+              tr
+                th 頒布場所
+                td
+                  | コミックマーケット90 3日目 8月14日(日)<br/>
+                  strong 東ム-38b
+              tr
+                th 頒布価格
+                td
+                  strong ¥1000<br/>
+                  | (コミケ終了後に電子書籍版の販売を検討中です)
+              tr
+                th 仕様
+                td
+                  | B5 左綴じ<br/>
+                  | フルカラー 50ページくらい(予定)
+          .l-span3
+
+    section.info
+      .l-container
+        .l-row
+          .l-span6.share
+            h3 このページを共有
+            .btn-area: button.btn.catalog コミケWebカタログで見る
+            .btn-area: button.btn.twitter Twitterでツイート
+            .btn-area: button.btn.facebook Facebookでシェア
+            .btn-area: button.btn.hatebu はてなブックマークに登録
+
+          .l-span6.about
+            h3 発行サークルについて
+            p
+              object(type='image/svg+xml', data='images/logo.svg', width=150, height=50)
+            p
+              strong pentapod
+              | は、
+
+    footer
+      .l-container
+        p.acknowledgement
+          | Powered by&nbsp;
+          span.invisible React Native
+          a.react-logo(href='https://facebook.github.io/react-native/')
+
     include _footer.pug
