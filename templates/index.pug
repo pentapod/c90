@@ -1,8 +1,19 @@
 -
-  pageTitle = "C90"
-  pageId = "index"
-  pageUrl = "c90/"
-  pageDescription = ""
+  pageTitle = 'C90新刊 はじめる React Native'
+  pageId = 'index'
+  pageUrl = 'c90/'
+  pageDescription = 'React Nativeのはじめの一歩を網羅！ C90新刊「はじめる React Native」'
+  shareText = pageDescription + ' ' + siteRootUrl + pageUrl
+
+  catalogUrl = 'https://webcatalog.circle.ms/Circle/12703961'
+  twitterShareUrl = 'https://twitter.com/intent/tweet?'
+    + 'text=' + encodeURIComponent(shareText)
+  facebookShareUrl = 'https://www.facebook.com/dialog/feed?'
+    + 'app_id=' + encodeURIComponent(fbAppId)
+    + '&display=popup&caption=' + encodeURIComponent(pageDescription)
+    + '&link=' + encodeURIComponent(siteRootUrl + pageUrl)
+    + '&redirect_uri=' + encodeURIComponent('https://www.facebook.com/')
+  hatebuShareUrl = 'http://b.hatena.ne.jp/entry/' + siteRootUrl + pageUrl
 
 doctype html
 html(prefix='og: http://ogp.me/ns#')
@@ -12,9 +23,11 @@ html(prefix='og: http://ogp.me/ns#')
 
     header
       .stripe
+      .crest
       .title
         object(type='image/svg+xml', data='images/title.svg')
-      .badge C90<br/>新刊
+      .stamp
+        object(type='image/svg+xml', data='images/stamp.svg')
 
     section.lead
       .l-container
@@ -83,18 +96,27 @@ html(prefix='og: http://ogp.me/ns#')
         .l-row
           .l-span6.share
             h3 このページを共有
-            .btn-area: button.btn.catalog コミケWebカタログで見る
-            .btn-area: button.btn.twitter Twitterでツイート
-            .btn-area: button.btn.facebook Facebookでシェア
-            .btn-area: button.btn.hatebu はてなブックマークに登録
+            .btn-area
+              a.btn.catalog(href=catalogUrl) コミケWebカタログで見る
+            .btn-area
+              a.btn.twitter(href=twitterShareUrl) Twitterでツイート
+            .btn-area
+              a.btn.facebook(href=facebookShareUrl) Facebookでシェア
+            .btn-area
+              a.btn.hatebu(href=hatebuShareUrl) はてなブックマークに登録
 
           .l-span6.about
             h3 発行サークルについて
             p
               object(type='image/svg+xml', data='images/logo.svg', width=150, height=50)
             p
-              strong pentapod
-              | は、
+              | pentapodは、はるさめ (<a href="https://twitter.com/spring_raining">@spring_raining</a>) の個人サークルです。<br/>
+              | 今年の夏から活動をはじめました。気まぐれで続けます。<br/>
+              | HP:
+              a(href='http://harusamex.com') http://harusamex.com<br/>
+              | Mail:
+              a(href='mailto:harusamex.com@gmail.com') harusamex.com@gmail.com
+            p ©pentapod
 
     footer
       .l-container
