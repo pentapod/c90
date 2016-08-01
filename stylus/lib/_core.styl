@@ -20,9 +20,11 @@ h3
 
 header
   $header-height = 45vw
+  $header-bottom-area = 4vw
   $stripe-top = 1vw
   $stripe-height = 6vw
-  $xs-header-height = 100vw
+  $xs-header-height = 110vw
+  $xs-header-bottom-area = 7vw
   $xs-stripe-top = 0
   $xs-stripe-height = 0
 
@@ -72,9 +74,18 @@ header
     position: absolute
     width: 60vw
     right: 0
-    bottom: 0
+    bottom: $header-bottom-area - 1vw
     @media $mq-xs
       width: 100vw
+      bottom: $xs-header-bottom-area - 2vw
+
+  .credit
+    position: absolute
+    bottom: 0
+    right: 10vw
+    font-size: 12px
+    @media $mq-xs
+      right: 20px
 
   .stamp
     position: absolute
@@ -94,11 +105,11 @@ header
     content: " "
     position: absolute
     width: 100%
-    height: 0.9vw
+    height: $header-bottom-area
     bottom: 0
     background-color: #ffffff
     @media $mq-xs
-      height: 2vw
+      height: $xs-header-bottom-area
 
 section.lead
   h2
