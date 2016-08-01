@@ -24,13 +24,13 @@ html(prefix='og: http://ogp.me/ns#')
     header
       .stripe
       .crest
+      .ribbon
+        object(type='image/svg+xml', data='images/ribbon.svg')
       .title
         object(type='image/svg+xml', data='images/title.svg')
       img.cover(src='images/cover.png')
       .credit Illust:&nbsp;
         a(href='https://twitter.com/eda_tori') 小枝あずき
-      .stamp
-        object(type='image/svg+xml', data='images/stamp.svg')
 
     section.lead
       .l-container
@@ -41,9 +41,9 @@ html(prefix='og: http://ogp.me/ns#')
         p
           a(href='https://facebook.github.io/react-native/') React Native
           | とは、Facebookが開発を行っているスマートフォンアプリ開発用のUIフレームワークです。
-          | React Nativeを使えば、フロントエンド界の有名ライブラリReact.jsを使って書くのと変わらない感覚で、アプリ開発を行うことができます。
+          | React Nativeを使えば、まるでWebアプリを作っているような感覚で、JavaScriptを使ったアプリ開発を行うことができます。
           | しかも、内部ではOS標準のUIの管理を行っているので、ネイティブのアプリと全く見分けがつきません。
-          | 本書には、そんなReact Nativeに入門するまでの内容が揃っています。
+          | 本書には、そんなReact Nativeに入門するまでの内容をつめこみました。
           | 「はじめる React Native」を読んで、あなたもアプリ開発をはじめませんか？
 
 
@@ -69,10 +69,10 @@ html(prefix='og: http://ogp.me/ns#')
               li React Native API
 
     section.spec
+      .sample
       .l-container
         .l-row
-          .l-span2
-          .l-span7
+          .l-span6
             table
               tr
                 th タイトル
@@ -82,17 +82,16 @@ html(prefix='og: http://ogp.me/ns#')
                 td
                   | コミックマーケット90 3日目 8月14日(日)<br/>
                   strong 東ム-38b
+                  a.btn(href=catalogUrl) Webカタログで見る
               tr
                 th 頒布価格
                 td
                   strong ¥1000<br/>
-                  | (8月14日に電子書籍版を販売予定)
+                  | (8月14日より電子書籍版を販売予定)
               tr
                 th 仕様
                 td
-                  | B5 左綴じ<br/>
-                  | フルカラー 52ページ
-          .l-span3
+                  | B5 フルカラー 52ページ
 
     section.info
       .l-container
@@ -100,7 +99,7 @@ html(prefix='og: http://ogp.me/ns#')
           .l-span6.share
             h3 このページを共有
             .btn-area
-              a.btn.catalog(href=catalogUrl) コミケWebカタログで見る
+              a.btn.catalog(href=catalogUrl) Webカタログでお気に入りに追加
             .btn-area
               a.btn.twitter(href=twitterShareUrl) Twitterでツイート
             .btn-area
@@ -113,8 +112,7 @@ html(prefix='og: http://ogp.me/ns#')
             p
               object(type='image/svg+xml', data='images/logo.svg', width=150, height=50)
             p
-              | pentapodは、はるさめ (<a href="https://twitter.com/spring_raining">@spring_raining</a>) の個人サークルです。<br/>
-              | 今年の夏から活動をはじめました。気まぐれで続けます。<br/>
+              | pentapodは、HN: 緑豆はるさめ (<a href="https://twitter.com/spring_raining">@spring_raining</a>) の個人サークルです。<br/>
               | HP:
               a(href='http://harusamex.com') http://harusamex.com<br/>
               | Mail:
