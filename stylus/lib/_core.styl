@@ -19,42 +19,61 @@ h3
   margin: 1em 0
 
 header
-  background: linear-gradient(135deg, #05A5D1 0, #279E93 100%)
+  $header-height = 45vw
+  $stripe-top = 1vw
+  $stripe-height = 6vw
+  $xs-header-height = 100vw
+  $xs-stripe-top = 0
+  $xs-stripe-height = 0
+
+  background: linear-gradient(135deg, #69cfe4 0, #2787a7 100%)
+  //background-color: #2192b7
   position: relative
-  height: 35vw
+  height: $header-height
   overflow: hidden
   @media $mq-xs
-    height: 100vw
+    height: $xs-header-height
 
   .stripe
     position: absolute
-    top: 1vw
+    top: $stripe-top
     width: 100%
-    height: 6vw
+    height: $stripe-height
     background: #ffffff
     @media $mq-xs
-      height: 18vw
+      top: $xs-stripe-top
+      height: $xs-stripe-height
 
   .crest
     position: absolute
-    top: 7vw
+    top: $stripe-top + $stripe-height
     width: 100%
-    height: 28vw
-    background-image: url(../images/crest.svg)
-    background-size: 256px
+    height: $header-height - $stripe-top - $stripe-height
+    background-image: url(../images/dots.svg)
+    background-size: 32px
     background-position: center
     background-repeat: repeat
     @media $mq-xs
-      top: 19vw
-      height: 81vw
+      top: $xs-stripe-top + $xs-stripe-height
+      height: $xs-header-height - $xs-stripe-top - $xs-stripe-height
 
   .title
     position: absolute
-    bottom: calc(-0.3vw - 8px)
+    //bottom: calc(-0.3vw - 8px)
+    top: $stripe-top + $stripe-height + 3vw
     left: 10vw
-    width: 60vw
+    width: 50vw
     @media $mq-xs
+      top: $xs-stripe-top + $xs-stripe-height + 10vw
       left: 0
+      width: 100vw
+
+  .cover
+    position: absolute
+    width: 60vw
+    right: 0
+    bottom: 0
+    @media $mq-xs
       width: 100vw
 
   .stamp
@@ -71,9 +90,15 @@ header
       width: 30vw
       height: 30vw
 
-  .line-1, .line-2
+  &:before
+    content: " "
     position: absolute
-    font-weight: 700
+    width: 100%
+    height: 0.9vw
+    bottom: 0
+    background-color: #ffffff
+    @media $mq-xs
+      height: 2vw
 
 section.lead
   h2
@@ -101,7 +126,7 @@ section.detail
 
 section.spec
   padding: 60px 0
-  background-color: pink
+  background-color: #ddd6d4
 
   th
     text-align: left
