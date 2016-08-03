@@ -95,7 +95,7 @@ header
 
   .ribbon
     position: absolute
-    top: -0.52vw
+    top: -0.6vw
     right: 2vw
     width: 10vw
     text-align: center
@@ -249,6 +249,8 @@ section.info
     font-size: 90%
 
 footer
+  margin-bottom: 90px
+
   .acknowledgement
     text-align: center
     line-height: 50px
@@ -260,3 +262,26 @@ footer
       height: 50px
       background-image: url(../images/react_logo.svg)
       background-size: 100%
+
+.questionnaire
+  $bg = #ed5a6c
+  display: block
+  position: fixed
+  bottom: 0
+  transform: translate3d(0, 0, 0)
+  z-index: 1000
+  width: 100%
+  padding: 15px 0
+  text-align: center
+  background-color: $bg
+  color: #ffffff
+  text-decoration: none
+
+  &.hidden
+    transform: translate3d(0, 80px, 0)
+
+  &:hover
+    color: #ffffff
+    text-decoration: underline
+    background-color: darken($bg, 10%)
+

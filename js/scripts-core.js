@@ -6,4 +6,17 @@
       a[i].setAttribute('target', '_blank');
     }
   }
+
+  var aboutDOM = document.querySelector('.about');
+  var questionnaireDOM = document.querySelector('.questionnaire');
+
+  window.addEventListener('scroll', function(e) {
+    var aboutDOMTop = aboutDOM.getBoundingClientRect().top;
+    if (window.innerHeight > aboutDOMTop) {
+      questionnaireDOM.classList.remove('hidden');
+    }
+    else {
+      questionnaireDOM.classList.add('hidden');
+    }
+  });
 }());
