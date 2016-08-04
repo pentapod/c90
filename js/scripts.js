@@ -1,1 +1,1 @@
-!function(){for(var t=document.querySelectorAll("a"),e=0;e<t.length;e++)t[e].origin!==location.origin&&t[e].setAttribute("target","_blank")}();
+!function(){for(var e=document.querySelectorAll("a"),t=0;t<e.length;t++)e[t].origin!==location.origin&&e[t].setAttribute("target","_blank");var n=document.querySelector(".about"),i=document.querySelector(".questionnaire");window.addEventListener("scroll",function(e){var t=n.getBoundingClientRect().top;window.innerHeight>t?i.classList.remove("hidden"):i.classList.add("hidden")})}();
