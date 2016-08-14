@@ -6,6 +6,7 @@
   shareText = pageDescription + ' ' + siteRootUrl + pageUrl
 
   catalogUrl = 'https://webcatalog.circle.ms/Circle/12703961'
+  boothUrl = 'https://pentapod.booth.pm/items/302212'
   twitterShareUrl = 'https://twitter.com/intent/tweet?'
     + 'text=' + encodeURIComponent(shareText)
   facebookShareUrl = 'https://www.facebook.com/dialog/feed?'
@@ -86,8 +87,14 @@ html(prefix='og: http://ogp.me/ns#')
               tr
                 th 頒布価格
                 td
-                  strong ¥1000<br/>
-                  | (8月14日より電子書籍版を販売予定)
+                  | B5冊子版:&nbsp;
+                  strong ¥1000
+                  | <br>電子版:&nbsp;
+                  strong ¥500
+                  a.btn(href=boothUrl) 電子版を購入
+                  | <br>冊子版購入者は電子版が&nbsp;
+                  strong ¥0!!!
+                  a.btn(href=boothUrl) 特典をダウンロード
               tr
                 th 仕様
                 td
